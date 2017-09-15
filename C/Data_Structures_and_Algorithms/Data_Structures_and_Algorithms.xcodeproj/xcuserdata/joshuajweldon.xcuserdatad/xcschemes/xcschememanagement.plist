@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Data_Structures_and_Algorithm_Tests.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 		<key>Data_Structures_and_Algorithms.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -13,6 +18,11 @@
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>0E3DA9621F6A19E5009FD98D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>0E4DFAA01F6B7D82003D06A3</key>
 		<dict>
 			<key>primary</key>
 			<true/>

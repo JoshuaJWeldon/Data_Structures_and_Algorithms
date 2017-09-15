@@ -9,7 +9,9 @@
 /* Begin PBXBuildFile section */
 		0E3DA9671F6A19E5009FD98D /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 0E3DA9661F6A19E5009FD98D /* main.c */; };
 		0E3DA96F1F6A1A42009FD98D /* LinkedList.c in Sources */ = {isa = PBXBuildFile; fileRef = 0E3DA96D1F6A1A42009FD98D /* LinkedList.c */; };
-		0E4DFA9C1F6B7B72003D06A3 /* LinkedListTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E4DFA9B1F6B7B72003D06A3 /* LinkedListTests.m */; };
+		0E4DFAA41F6B7D82003D06A3 /* LinkedList_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E4DFAA31F6B7D82003D06A3 /* LinkedList_Tests.m */; };
+		0E4DFAA91F6B86F6003D06A3 /* LinkedList.h in Sources */ = {isa = PBXBuildFile; fileRef = 0E3DA96E1F6A1A42009FD98D /* LinkedList.h */; };
+		0E4DFAAA1F6B878A003D06A3 /* LinkedList.c in Sources */ = {isa = PBXBuildFile; fileRef = 0E3DA96D1F6A1A42009FD98D /* LinkedList.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -29,11 +31,20 @@
 		0E3DA9661F6A19E5009FD98D /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		0E3DA96D1F6A1A42009FD98D /* LinkedList.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = LinkedList.c; sourceTree = "<group>"; };
 		0E3DA96E1F6A1A42009FD98D /* LinkedList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LinkedList.h; sourceTree = "<group>"; };
-		0E4DFA9B1F6B7B72003D06A3 /* LinkedListTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LinkedListTests.m; sourceTree = "<group>"; };
+		0E4DFAA11F6B7D82003D06A3 /* Data_Structures_and_Algorithm_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Data_Structures_and_Algorithm_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0E4DFAA31F6B7D82003D06A3 /* LinkedList_Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LinkedList_Tests.m; sourceTree = "<group>"; };
+		0E4DFAA51F6B7D82003D06A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		0E3DA9601F6A19E5009FD98D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0E4DFA9E1F6B7D82003D06A3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -47,6 +58,7 @@
 			isa = PBXGroup;
 			children = (
 				0E3DA9651F6A19E5009FD98D /* Data_Structures_and_Algorithms */,
+				0E4DFAA21F6B7D82003D06A3 /* Data_Structures_and_Algorithm_Tests */,
 				0E3DA9641F6A19E5009FD98D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -55,6 +67,7 @@
 			isa = PBXGroup;
 			children = (
 				0E3DA9631F6A19E5009FD98D /* Data_Structures_and_Algorithms */,
+				0E4DFAA11F6B7D82003D06A3 /* Data_Structures_and_Algorithm_Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -63,11 +76,19 @@
 			isa = PBXGroup;
 			children = (
 				0E3DA9661F6A19E5009FD98D /* main.c */,
-				0E4DFA9B1F6B7B72003D06A3 /* LinkedListTests.m */,
 				0E3DA96D1F6A1A42009FD98D /* LinkedList.c */,
 				0E3DA96E1F6A1A42009FD98D /* LinkedList.h */,
 			);
 			path = Data_Structures_and_Algorithms;
+			sourceTree = "<group>";
+		};
+		0E4DFAA21F6B7D82003D06A3 /* Data_Structures_and_Algorithm_Tests */ = {
+			isa = PBXGroup;
+			children = (
+				0E4DFAA31F6B7D82003D06A3 /* LinkedList_Tests.m */,
+				0E4DFAA51F6B7D82003D06A3 /* Info.plist */,
+			);
+			path = Data_Structures_and_Algorithm_Tests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -90,6 +111,23 @@
 			productReference = 0E3DA9631F6A19E5009FD98D /* Data_Structures_and_Algorithms */;
 			productType = "com.apple.product-type.tool";
 		};
+		0E4DFAA01F6B7D82003D06A3 /* Data_Structures_and_Algorithm_Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0E4DFAA61F6B7D82003D06A3 /* Build configuration list for PBXNativeTarget "Data_Structures_and_Algorithm_Tests" */;
+			buildPhases = (
+				0E4DFA9D1F6B7D82003D06A3 /* Sources */,
+				0E4DFA9E1F6B7D82003D06A3 /* Frameworks */,
+				0E4DFA9F1F6B7D82003D06A3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Data_Structures_and_Algorithm_Tests;
+			productName = Data_Structures_and_Algorithm_Tests;
+			productReference = 0E4DFAA11F6B7D82003D06A3 /* Data_Structures_and_Algorithm_Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -101,6 +139,10 @@
 				TargetAttributes = {
 					0E3DA9621F6A19E5009FD98D = {
 						CreatedOnToolsVersion = 8.3.3;
+						ProvisioningStyle = Automatic;
+					};
+					0E4DFAA01F6B7D82003D06A3 = {
+						CreatedOnToolsVersion = 9.0;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -118,9 +160,20 @@
 			projectRoot = "";
 			targets = (
 				0E3DA9621F6A19E5009FD98D /* Data_Structures_and_Algorithms */,
+				0E4DFAA01F6B7D82003D06A3 /* Data_Structures_and_Algorithm_Tests */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0E4DFA9F1F6B7D82003D06A3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0E3DA95F1F6A19E5009FD98D /* Sources */ = {
@@ -128,8 +181,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				0E3DA96F1F6A1A42009FD98D /* LinkedList.c in Sources */,
-				0E4DFA9C1F6B7B72003D06A3 /* LinkedListTests.m in Sources */,
 				0E3DA9671F6A19E5009FD98D /* main.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0E4DFA9D1F6B7D82003D06A3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0E4DFAAA1F6B878A003D06A3 /* LinkedList.c in Sources */,
+				0E4DFAA91F6B86F6003D06A3 /* LinkedList.h in Sources */,
+				0E4DFAA41F6B7D82003D06A3 /* LinkedList_Tests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,6 +313,36 @@
 			};
 			name = Release;
 		};
+		0E4DFAA71F6B7D82003D06A3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = Data_Structures_and_Algorithm_Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "codes.aloha.Data-Structures-and-Algorithm-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		0E4DFAA81F6B7D82003D06A3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = Data_Structures_and_Algorithm_Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "codes.aloha.Data-Structures-and-Algorithm-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -268,6 +360,15 @@
 			buildConfigurations = (
 				0E3DA96B1F6A19E5009FD98D /* Debug */,
 				0E3DA96C1F6A19E5009FD98D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0E4DFAA61F6B7D82003D06A3 /* Build configuration list for PBXNativeTarget "Data_Structures_and_Algorithm_Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0E4DFAA71F6B7D82003D06A3 /* Debug */,
+				0E4DFAA81F6B7D82003D06A3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

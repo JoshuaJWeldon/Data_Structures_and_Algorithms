@@ -11,11 +11,7 @@
 #include <math.h>
 
 #include "LinkedList.h"
-
-typedef struct Data {
-    int * i;
-} Data;
-
+/*
 char * toString(void * data){
     
     int * i = (int *) data;
@@ -42,9 +38,9 @@ void ll_print(LinkedList * list){
     printf("list: %s \n", list_string);
     free(list_string);
 }
-
+*/
 int main(int argc, const char * argv[]) {
-    
+/*
     LinkedList * list;
     int * d1, * d2, * d3, * d4, * d5;
     int * temp;
@@ -137,6 +133,9 @@ int main(int argc, const char * argv[]) {
     
     free(d3);
     free(d5);
-    
+ */
     return 0;
+ 
 }
+ 
+ 

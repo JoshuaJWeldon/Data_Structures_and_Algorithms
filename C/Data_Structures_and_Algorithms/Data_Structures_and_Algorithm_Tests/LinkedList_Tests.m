@@ -1,6 +1,6 @@
 //
-//  Data_Structures_and_Algorithm_Tests.m
-//  Data_Structures_and_Algorithm_Tests
+//  LinkedList_Tests.m
+//  LinkedList_Tests
 //
 //  Created by Joshua Weldon on 9/14/17.
 //  Copyright © 2017 Joshua Weldon. All rights reserved.
@@ -13,6 +13,21 @@
 
 @end
 
+/**
+ converts an integer to a string
+ 
+ Returns:
+ the integer as a string
+ 
+ Parameters:
+   
+ - data: the integer to convert
+ 
+ Warning:
+ Allocates Memory.
+ 
+ */
+
 char * int_toString(void * data){
     
     int * i = (int *) data;
@@ -24,6 +39,19 @@ char * int_toString(void * data){
     
     return string;
 }
+
+/**
+ Compares two integers
+ 
+ Returns:
+ the result of the comparison
+ 
+ Parameters:
+ 
+ - d1: the first integer
+ - d2: the second integer
+ 
+ */
 
 int isEqual(void * d1, void * d2){
     
@@ -49,7 +77,22 @@ LinkedList * list;
     ll_destroy(list);
 }
 
-- (void) testPrintNull{
+/**
+ converts an integer to a string
+ 
+ @Returns:
+ the integer as a string
+ 
+ Parameters:
+ 
+ - data: the integer to convert
+ 
+ Warning:
+ Allocates Memory.
+ 
+ */
+
+- (void) testPrintEmptyList{
     
     char * string = ll_toString(list, int_toString);
     
@@ -58,7 +101,7 @@ LinkedList * list;
     free(string);
 }
 
-- (void)testAdd {
+- (void)testAddElement {
     
     int * d;
     int size;
@@ -78,13 +121,19 @@ LinkedList * list;
     XCTAssert(*d == 1101, @"%i", *d);
 }
 
--(void)testAddMultiple {
+/**
+ 
+ 
+ 
+ */
+
+-(void)testAddMultipleElements {
     
     int * pointer;
     int value;
     int size = 0;
     
-    while(size++ < 10){
+    while(size++ < 1000){
         
         pointer = (int *) malloc(sizeof(int));
         value = (int) pointer;

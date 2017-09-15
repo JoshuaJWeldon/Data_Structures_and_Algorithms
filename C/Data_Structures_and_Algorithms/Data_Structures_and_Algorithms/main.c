@@ -11,25 +11,24 @@
 #include <math.h>
 
 #include "LinkedList.h"
-/*
+
 char * toString(void * data){
     
-    int * i = (int *) data;
+    int i = *(int *) data;
     
-    int    length = log10(*i) + 1;
+    int    length = log10(i) + 1;
     char * string = (char *) malloc(length);
     
-    sprintf(string, "%d", *i);
+    sprintf(string, "%d", i);
     
     return string;
 }
 
 int isEqual(void * d1, void * d2){
     
-    Data * data1 = (Data *) d1;
-    Data * data2 = (Data *) d2;
-    
-    return data1->i == data2->i;
+    int data1 = *(int *) d1;
+    int data2 = *(int *) d2;
+    return data1 == data2;
 }
 
 void ll_print(LinkedList * list){
@@ -38,9 +37,9 @@ void ll_print(LinkedList * list){
     printf("list: %s \n", list_string);
     free(list_string);
 }
-*/
+
 int main(int argc, const char * argv[]) {
-/*
+
     LinkedList * list;
     int * d1, * d2, * d3, * d4, * d5;
     int * temp;
@@ -133,7 +132,7 @@ int main(int argc, const char * argv[]) {
     
     free(d3);
     free(d5);
- */
+ 
     return 0;
  
 }

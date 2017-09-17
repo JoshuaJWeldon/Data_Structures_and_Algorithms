@@ -8,59 +8,11 @@
 
 #import <XCTest/XCTest.h>
 #import "LinkedList.h"
+#import "Integer.h"
 
 @interface LinkedList_Tests : XCTestCase
 
 @end
-
-/**
- Converts an integer to a string.
-
- @Warning
- Allocates Memory.
- 
- @Param data 
- The integer to convert.
- 
- @Return
- The integer as a string.
-
- */
-
-char * int_toString(void * data){
-    
-    int * i = (int *) data;
-    
-    int    length = log10(*i) + 1;
-    char * string = (char *) malloc(length);
-    
-    sprintf(string, "%d", *i);
-    
-    return string;
-}
-
-/**
- Compares two integers.
- 
- @Param d1 
- The first integer.
- 
- @Param d2 
- The second integer.
- 
- @Return
- The result of the comparison.
- 
- 
- */
-
-int isEqual(void * d1, void * d2){
-    
-    int * data1 = (int *) d1;
-    int * data2 = (int *) d2;
-    
-    return *data1 == *data2;
-}
 
 LinkedList * list;
 
@@ -69,7 +21,7 @@ LinkedList * list;
 - (void)setUp {
     [super setUp];
     
-    list = ll_init(isEqual);
+    list = ll_init(int_isEqual);
 }
 
 - (void)tearDown {
@@ -591,43 +543,118 @@ LinkedList * list;
 
 - (void)testSize_EmptyList {
     
+    XCTAssert(ll_size(list) == 0, @"ll_size: %i", ll_size(list));
 }
 
 - (void)testSize_WithOneElement {
     
+    int * pointer = (int *) malloc(sizeof(int)); //memory freed in tear down
+    int   value   = 23425;
+    
+    *pointer = value;
+    
+    ll_add(list, pointer);
+    
+    XCTAssert(ll_size(list) == 1, @"ll_size: %i", ll_size(list));
 }
 
 - (void)testSize_FullList {
     
+    int * pointer;
+    int   i;
+    
+    for(i = 0; i < 1000; i++){
+        pointer  = (int *) malloc(sizeof(int)); //memory freed in tear down
+        *pointer = i;
+        
+        ll_add(list, pointer);
+        
+        XCTAssert(ll_size(list) == i+1, @"ll_size: %i, i+1: %i", ll_size(list), i+1);
+    }
+    
+    XCTAssert(ll_size(list) == 1000, @"ll_size: %i", ll_size(list));
 }
 
 - (void)testIsEmpty_EmptyList {
     
+    XCTAssert(ll_isEmpty(list), @"ll_isEmpty: %i", ll_isEmpty(list));
 }
 
 - (void)testIsEmpty_WithOneElement {
     
+    int * pointer = (int *) malloc(sizeof(int));//memory freed in tear down
+    int   value   = 1235;
+    
+    *pointer = value;
+    
+    ll_add(list, pointer);
+    
+    XCTAssert(ll_size(list) == 1, @"ll_size: %i", ll_size(list));
+    XCTAssert(!ll_isEmpty(list), @"ll_isEmpty: %i", ll_isEmpty(list));
 }
 
 - (void)testIsEmpty_FullList {
     
+    int * pointer;
+    int   i;
+    
+    for(i = 0; i < 10; i++){
+        pointer  = (int *) malloc(sizeof(int)); //memory freed in tear down
+        *pointer = i;
+        
+        ll_add(list, pointer);
+        
+        XCTAssert(ll_size(list) == i+1, @"ll_size: %i, i+1: %i", ll_size(list), i+1);
+        XCTAssert(!ll_isEmpty(list), @"ll_isEmpty: %i", ll_isEmpty(list));
+    }
+    
+    XCTAssert(ll_size(list) == 10, @"ll_size: %i", ll_size(list));
+    XCTAssert(!ll_isEmpty(list), @"ll_isEmpty: %i", ll_isEmpty(list));
 }
 
 - (void) testToString_EmptyList{
     
     char * string = ll_toString(list, int_toString);
     
-    XCTAssert(strcmp("NULL", string) == 0);
+    XCTAssert(strcmp("NULL", string) == 0, @"string: %s", string);
     
     free(string);
 }
 
 - (void)testToString_WithOneElement {
     
+    int *  pointer = (int *) malloc(sizeof(int)); //memory freed in tear down
+    int    value   = 235436;
+    char * string;
+    
+    *pointer = value;
+    ll_add(list, pointer);
+    
+    string = ll_toString(list, int_toString);
+    
+    XCTAssert(strcmp(string, "235436") == 0, @"string: %s", string);
+    
+    free(string);
 }
 
 - (void)testToString_WithFullList {
     
+    int *  pointer;
+    int    i;
+    char * string;
+    
+    for (i = 0; i < 10; i++) {
+        pointer  = (int *) malloc(sizeof(int)); //memory freed in tear down
+        *pointer = i;
+        
+        ll_add(list, pointer);
+    }
+    
+    string = ll_toString(list, int_toString);
+    
+    XCTAssert(strcmp(string, "0 -> 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8 -> 9") == 0, @"string: %s", string);
+    
+    free(string);
 }
 
 @end

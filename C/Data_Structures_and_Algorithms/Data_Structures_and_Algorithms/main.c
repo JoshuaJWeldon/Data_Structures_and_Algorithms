@@ -8,32 +8,14 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <math.h>
 
 #include "LinkedList.h"
+#include "Integer.h"
 
-char * toString(void * data){
-    
-    int i = *(int *) data;
-    
-    int    length = log10(i) + 1;
-    char * string = (char *) malloc(length);
-    
-    sprintf(string, "%d", i);
-    
-    return string;
-}
-
-int isEqual(void * d1, void * d2){
-    
-    int data1 = *(int *) d1;
-    int data2 = *(int *) d2;
-    return data1 == data2;
-}
 
 void ll_print(LinkedList * list){
     char * list_string;
-    list_string = ll_toString(list, toString);
+    list_string = ll_toString(list, int_toString);
     printf("list: %s \n", list_string);
     free(list_string);
 }
@@ -57,7 +39,7 @@ int main(int argc, const char * argv[]) {
     *d4 = 4;
     *d5 = 5;
     
-    list = ll_init(isEqual);
+    list = ll_init(int_isEqual);
     printf("initialize list \n");
     
     ll_print(list);

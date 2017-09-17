@@ -209,6 +209,11 @@ int ll_size(LinkedList * list){
     return i;
 }
 
+int ll_isEmpty(LinkedList * list){
+    
+    return list->head == NULL;
+}
+
 char * ll_toString(LinkedList * list, char * (* data_toString)(void *)){
     
     LinkedListNode * current = list->head;

@@ -10,7 +10,6 @@
 		0E3DA9671F6A19E5009FD98D /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 0E3DA9661F6A19E5009FD98D /* main.c */; };
 		0E3DA96F1F6A1A42009FD98D /* LinkedList.c in Sources */ = {isa = PBXBuildFile; fileRef = 0E3DA96D1F6A1A42009FD98D /* LinkedList.c */; };
 		0E4DFAA41F6B7D82003D06A3 /* LinkedList_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E4DFAA31F6B7D82003D06A3 /* LinkedList_Tests.m */; };
-		0E4DFAA91F6B86F6003D06A3 /* LinkedList.h in Sources */ = {isa = PBXBuildFile; fileRef = 0E3DA96E1F6A1A42009FD98D /* LinkedList.h */; };
 		0E4DFAAA1F6B878A003D06A3 /* LinkedList.c in Sources */ = {isa = PBXBuildFile; fileRef = 0E3DA96D1F6A1A42009FD98D /* LinkedList.c */; };
 /* End PBXBuildFile section */
 
@@ -190,7 +189,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0E4DFAAA1F6B878A003D06A3 /* LinkedList.c in Sources */,
-				0E4DFAA91F6B86F6003D06A3 /* LinkedList.h in Sources */,
 				0E4DFAA41F6B7D82003D06A3 /* LinkedList_Tests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

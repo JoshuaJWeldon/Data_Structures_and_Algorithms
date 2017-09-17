@@ -18,15 +18,16 @@ typedef struct LinkedList     LinkedList;
 
 /**
  
- Initializes a LinkedListNode
+ Initializes a LinkedListNode.
  
  @Warning
  Allocates memory.
  
  @Return
- a new LinkedListNode
+ A new LinkedListNode.
  
- @Param data element to be stored
+ @Param data 
+ Element to be stored.
  
  */
 
@@ -34,16 +35,16 @@ LinkedListNode * lln_init(void * data);
 
 /**
  
- Initializes a LinkedList
+ Initializes a LinkedList.
  
  @Warning
  Allocates memory.
  
- @Returns
- a new LinkedList
+ @Param isEqual 
+ A function to compare two data elements.
  
- @Param
- isEqual a function to compare two data elements
+ @Return
+ A new LinkedList.
  
  */
 
@@ -51,13 +52,13 @@ LinkedList * ll_init(int (* isEqual) (void*, void*));
 
 /**
  
- Frees the list, nodes, and data
+ Frees the list, nodes, and data.
  
  @Warning
  Deallocates memory.
  
- @Param
- list the linkedlist
+ @Param list 
+ The linkedlist
  
  */
 
@@ -71,13 +72,13 @@ void ll_destroy(LinkedList * list);
  Allocates memory.
  
  @Remark
- Takes O(n) runtime
+ Takes O(n) runtime.
  
- @Param
- list the linkedlist
+ @Param list 
+ The linkedlist.
  
- @Param 
- data data to store
+ @Param data 
+ Data to store.
  
  */
 
@@ -91,13 +92,13 @@ void ll_add(LinkedList * list, void * data);
  Deallocates memory.
  
  @Remark
- Takes O(1) runtime
+ Takes O(1) runtime.
  
- @Param
- list the linkedlist
+ @Param list 
+ The linkedlist.
  
  @Return
- The removed data
+ The removed data.
  
  */
 
@@ -111,13 +112,13 @@ void * ll_remove(LinkedList * list);
  Allocates memory.
  
  @Remark
- Takes O(1) runtime
+ Takes O(1) runtime.
  
- @Param
- list the linkedlist
+ @Param list 
+ The linkedlist.
  
- @Param
- data data to store
+ @Param data 
+ Data to store.
  
  */
 
@@ -133,11 +134,11 @@ void ll_push(LinkedList * list, void * data);
  @Remark
  Takes O(1) runtime
  
- @Param
- list the linkedlist
+ @Param list 
+ The linkedlist.
  
  @Return
- The removed data
+ The removed data.
  
  */
 
@@ -148,13 +149,13 @@ void * ll_pop(LinkedList * list);
  Returns the first item's data in the list.
  
  @Remark
- Takes O(1) runtime
+ Takes O(1) runtime.
  
- @Param
- list the linkedlist
+ @Param list 
+ The linkedlist.
  
  @Return
- Data of the first node
+ Data of the first node.
  
  */
 
@@ -168,16 +169,16 @@ void * ll_peek(LinkedList * list);
  Allocates memory.
  
  @Remark
- Takes O(n) runtime
+ Takes O(n) runtime.
  
- @Param
- list the linkedlist
+ @Param list 
+ The linkedlist.
  
- @Param 
- index the index in which to add
+ @Param index 
+ The index in which to add.
  
- @Param
- data the data to store
+ @Param data 
+ The data to store.
  
  */
 
@@ -191,16 +192,16 @@ void ll_addAt(LinkedList * list, int index, void * data);
  Deallocates memory.
  
  @Remark
- Takes O(n) runtime
+ Takes O(n) runtime.
  
- @Param
- list the linkedlist
+ @Param list 
+ The linkedlist.
  
- @Param
- index the index of the item to remove
+ @Param index 
+ The index of the item to remove.
  
  @Return
- the data removed
+ The data removed.
  
  */
 
@@ -208,19 +209,19 @@ void * ll_removeAt(LinkedList * list, int index);
 
 /**
  
- Returns the first index of a given data.
+ Returns the first index of a given element.
  
  @Remark
- Takes O(n) runtime
+ Takes O(n) runtime.
  
- @Param
- list the linkedlist
+ @Param list 
+ The linkedlist.
  
- @Param
- data data to find
+ @Param data 
+ Data to find.
  
  @Return
- The first index of given data
+ The first index of given data. [-1 if does not exist.]
  
  */
 
@@ -231,16 +232,16 @@ int ll_indexOf(LinkedList * list, void * data);
  Returns data at a given index of the list.
  
  @Remark
- Takes O(n) runtime
+ Takes O(n) runtime.
  
- @Param
- list the linkedlist
+ @Param list 
+ The linkedlist.
  
- @Param
- index the index of the item to get
+ @Param index 
+ The index of the item to get.
  
  @Return
- the data at given index
+ The data at given index.
  
  */
 
@@ -251,17 +252,36 @@ void * ll_get(LinkedList * list, int index);
  Returns the size of the list.
 
  @Remark
- Takes O(n) runtime
+ Takes O(n) runtime.
  
- @Param
- list the linkedlist
+ @Param list 
+ The linkedlist.
  
  @Return
- the size of the list
+ The size of the list.
  
  */
 
 int ll_size(LinkedList * list);
+
+/**
+ 
+ Returns true if this collection contains no elements. False otherwise;
+ 
+ This implementation returns list->head == NULL.
+ 
+ @Remark 
+ Takes O(1) runtime.
+ 
+ @Param list
+ The linkedlist.
+ 
+ @Return
+ true if the list contains no elements. False otherwise;
+ 
+ */
+
+int ll_isEmpty(LinkedList * list);
 
 /**
  
@@ -270,14 +290,14 @@ int ll_size(LinkedList * list);
  @Warning
  Allocates Memory.
  
- @Param
- list the linkedlist
+ @Param list 
+ The linkedlist.
  
- @Param
- data_toString a function to convert a data element to a string
+ @Param data_toString 
+ A function to convert a data element to a string.
  
  @Return
- the linkedlist as a string.
+ The linkedlist as a string.
  
  */
 

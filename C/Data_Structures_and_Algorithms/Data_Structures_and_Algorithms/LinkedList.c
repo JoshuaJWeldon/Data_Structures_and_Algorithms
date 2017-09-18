@@ -15,7 +15,7 @@ struct LinkedListNode {
 
 struct LinkedList {
     LinkedListNode * head;
-    int           (* isEqual)(void *, void *);
+    bool          (* isEqual)(void *, void *);
 };
 
 LinkedListNode * lln_init(void * data){
@@ -27,7 +27,7 @@ LinkedListNode * lln_init(void * data){
     return node;
 }
 
-LinkedList * ll_init(int (* isEqual) (void*, void*)){
+LinkedList * ll_init(bool (* isEqual) (void*, void*)){
     LinkedList * list = (LinkedList *) malloc(sizeof(LinkedList));
     
     list->head     = NULL;
@@ -50,14 +50,14 @@ void ll_destroy(LinkedList * list){
     free(list);
 }
 
-void ll_add(LinkedList * list, void * data){
+bool ll_add(LinkedList * list, void * data){
     
     LinkedListNode * endNode = lln_init(data);
     LinkedListNode * current = list->head;
     
     if(current == NULL){
         list->head = endNode;
-        return;
+        return true;
     }
     
     while (current->next != NULL) {
@@ -65,6 +65,18 @@ void ll_add(LinkedList * list, void * data){
     }
     
     current->next = endNode;
+    
+    return true;
+}
+
+void ll_clear(LinkedList * list){
+    
+    void * data;
+    
+    while (!ll_isEmpty(list)) {
+        data = ll_remove(list);
+        free(data);
+    }
     
     return;
 }

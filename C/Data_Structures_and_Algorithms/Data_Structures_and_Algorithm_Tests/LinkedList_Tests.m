@@ -21,13 +21,14 @@ LinkedList * list;
 - (void)setUp {
     [super setUp];
     
-    list = ll_init(int_isEqual);
+    list = ll_init(int_equals);
 }
 
 - (void)tearDown {
-    [super tearDown];
     
     ll_destroy(list);
+    
+    [super tearDown];
 }
 
 - (void) testAdd {
@@ -68,6 +69,49 @@ LinkedList * list;
         pointer = (int *) ll_get(list, size - 1);
         XCTAssert(*pointer == value, @"pointer: %i, value: %d", *pointer, value);
     }
+}
+
+- (void)testClear_EmptyList {
+    
+    XCTAssert(ll_size(list) == 0, @"ll_size: %i", ll_size(list));
+    XCTAssert(ll_isEmpty(list), @"ll_isEmpty: %i", ll_isEmpty(list));
+    ll_clear(list);
+    XCTAssert(ll_size(list) == 0, @"ll_size: %i", ll_size(list));
+    XCTAssert(ll_isEmpty(list), @"ll_isEmpty: %i", ll_isEmpty(list));
+}
+
+- (void)testClear_OneElement {
+    
+    int * pointer = (int *) malloc(sizeof(int));
+    int   value   = 2345;
+    
+    *pointer = value;
+    ll_add(list, pointer);
+    
+    XCTAssert(ll_size(list) == 1, @"ll_size: %i", ll_size(list));
+    XCTAssert(!ll_isEmpty(list), @"ll_isEmpty: %i", ll_isEmpty(list));
+    ll_clear(list);
+    XCTAssert(ll_size(list) == 0, @"ll_size: %i", ll_size(list));
+    XCTAssert(ll_isEmpty(list), @"ll_isEmpty: %i", ll_isEmpty(list));
+}
+
+- (void)testClear_FullList {
+    
+    int * pointer;
+    int   i;
+    
+    for(i = 0; i < 1000; i++){
+        pointer  = (int *) malloc(sizeof(int));
+        *pointer = i;
+        
+        ll_add(list, pointer);
+    }
+    
+    XCTAssert(ll_size(list) == 1000, @"ll_size: %i", ll_size(list));
+    XCTAssert(!ll_isEmpty(list), @"ll_isEmpty: %i", ll_isEmpty(list));
+    ll_clear(list);
+    XCTAssert(ll_size(list) == 0, @"ll_size: %i", ll_size(list));
+    XCTAssert(ll_isEmpty(list), @"ll_isEmpty: %i", ll_isEmpty(list));
 }
 
 - (void) testRemove{

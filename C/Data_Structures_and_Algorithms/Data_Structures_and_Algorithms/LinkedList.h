@@ -12,6 +12,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#include <stdbool.h>
 
 typedef struct LinkedListNode LinkedListNode;
 typedef struct LinkedList     LinkedList;
@@ -48,7 +49,7 @@ LinkedListNode * lln_init(void * data);
  
  */
 
-LinkedList * ll_init(int (* isEqual) (void*, void*));
+LinkedList * ll_init(bool (* isEqual) (void*, void*));
 
 /**
  
@@ -82,7 +83,24 @@ void ll_destroy(LinkedList * list);
  
  */
 
-void ll_add(LinkedList * list, void * data);
+bool ll_add(LinkedList * list, void * data);
+
+/**
+ 
+ Removes all elements from the list.
+ 
+ @Warning
+ Deallocates Memory.
+ 
+ @Remark
+ Runtime O(n).
+ 
+ @Param list
+ The linkedList.
+ 
+ */
+
+void ll_clear(LinkedList * list);
 
 /**
  

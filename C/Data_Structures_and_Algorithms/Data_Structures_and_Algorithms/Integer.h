@@ -12,15 +12,18 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
+#include <stdbool.h>
+#include <limits.h>
 
 
 /**
+ 
  Converts an integer to a string.
  
  @Warning
  Allocates Memory.
  
- @Param data
+ @Param integer
  The integer to convert.
  
  @Return
@@ -28,23 +31,43 @@
  
  */
 
-char * int_toString(void * data);
+char * int_toString(void * integer);
 
 /**
- Compares two integers.
  
- @Param d1
+ Indicates whether the first integer "is equal" to the second.
+ 
+ @Param integer1
  The first integer.
  
- @Param d2
+ @Param integer2
  The second integer.
  
  @Return
- The result of the comparison.
+ Result of the comparison.
  
  
  */
 
-int int_isEqual(void * d1, void * d2);
+bool int_equals(void * integer1, void * integer2);
+
+/**
+ 
+ Compares the first integer with the second for order. 
+ 
+ Returns a negative integer, zero, or a positive integer as the first integer is less than, equal to, or greater than the second.
+ 
+ @Param integer1
+ The first integer.
+ 
+ @Param integer2
+ The second integer.
+ 
+ @Return
+ Result of the comparison.
+ 
+ */
+
+int int_compareTo(void * integer1, void * integer2);
 
 #endif /* Integer_h */

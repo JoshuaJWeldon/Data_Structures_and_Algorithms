@@ -39,7 +39,7 @@ int main(int argc, const char * argv[]) {
     *d4 = 4;
     *d5 = 5;
     
-    list = ll_init(int_isEqual);
+    list = ll_init(int_equals);
     printf("initialize list \n");
     
     ll_print(list);

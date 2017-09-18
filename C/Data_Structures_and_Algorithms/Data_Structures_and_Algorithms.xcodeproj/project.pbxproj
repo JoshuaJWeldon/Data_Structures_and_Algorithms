@@ -11,6 +11,8 @@
 		0E3DA96F1F6A1A42009FD98D /* LinkedList.c in Sources */ = {isa = PBXBuildFile; fileRef = 0E3DA96D1F6A1A42009FD98D /* LinkedList.c */; };
 		0E479A801F6F228800D78D84 /* Integer.c in Sources */ = {isa = PBXBuildFile; fileRef = 0E479A7E1F6F228800D78D84 /* Integer.c */; };
 		0E479A811F6F246500D78D84 /* Integer.c in Sources */ = {isa = PBXBuildFile; fileRef = 0E479A7E1F6F228800D78D84 /* Integer.c */; };
+		0E479A841F706DAD00D78D84 /* TreeMap.c in Sources */ = {isa = PBXBuildFile; fileRef = 0E479A821F706DAD00D78D84 /* TreeMap.c */; };
+		0E479A891F70743200D78D84 /* Integer_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E479A881F70743200D78D84 /* Integer_Tests.m */; };
 		0E4DFAA41F6B7D82003D06A3 /* LinkedList_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E4DFAA31F6B7D82003D06A3 /* LinkedList_Tests.m */; };
 		0E4DFAAA1F6B878A003D06A3 /* LinkedList.c in Sources */ = {isa = PBXBuildFile; fileRef = 0E3DA96D1F6A1A42009FD98D /* LinkedList.c */; };
 /* End PBXBuildFile section */
@@ -34,6 +36,9 @@
 		0E3DA96E1F6A1A42009FD98D /* LinkedList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LinkedList.h; sourceTree = "<group>"; };
 		0E479A7E1F6F228800D78D84 /* Integer.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Integer.c; sourceTree = "<group>"; };
 		0E479A7F1F6F228800D78D84 /* Integer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Integer.h; sourceTree = "<group>"; };
+		0E479A821F706DAD00D78D84 /* TreeMap.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = TreeMap.c; sourceTree = "<group>"; };
+		0E479A831F706DAD00D78D84 /* TreeMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TreeMap.h; sourceTree = "<group>"; };
+		0E479A881F70743200D78D84 /* Integer_Tests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Integer_Tests.m; sourceTree = "<group>"; };
 		0E4DFAA11F6B7D82003D06A3 /* Data_Structures_and_Algorithm_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Data_Structures_and_Algorithm_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E4DFAA31F6B7D82003D06A3 /* LinkedList_Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LinkedList_Tests.m; sourceTree = "<group>"; };
 		0E4DFAA51F6B7D82003D06A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -83,6 +88,8 @@
 				0E479A7F1F6F228800D78D84 /* Integer.h */,
 				0E3DA96D1F6A1A42009FD98D /* LinkedList.c */,
 				0E3DA96E1F6A1A42009FD98D /* LinkedList.h */,
+				0E479A821F706DAD00D78D84 /* TreeMap.c */,
+				0E479A831F706DAD00D78D84 /* TreeMap.h */,
 			);
 			path = Data_Structures_and_Algorithms;
 			sourceTree = "<group>";
@@ -91,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				0E4DFAA31F6B7D82003D06A3 /* LinkedList_Tests.m */,
+				0E479A881F70743200D78D84 /* Integer_Tests.m */,
 				0E4DFAA51F6B7D82003D06A3 /* Info.plist */,
 			);
 			path = Data_Structures_and_Algorithm_Tests;
@@ -187,6 +195,7 @@
 			files = (
 				0E479A801F6F228800D78D84 /* Integer.c in Sources */,
 				0E3DA96F1F6A1A42009FD98D /* LinkedList.c in Sources */,
+				0E479A841F706DAD00D78D84 /* TreeMap.c in Sources */,
 				0E3DA9671F6A19E5009FD98D /* main.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -197,6 +206,7 @@
 			files = (
 				0E479A811F6F246500D78D84 /* Integer.c in Sources */,
 				0E4DFAAA1F6B878A003D06A3 /* LinkedList.c in Sources */,
+				0E479A891F70743200D78D84 /* Integer_Tests.m in Sources */,
 				0E4DFAA41F6B7D82003D06A3 /* LinkedList_Tests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -14,8 +14,21 @@
 #include <string.h>
 #include <stdbool.h>
 
+/**
+ 
+ A node that stores data for a LinkedList.
+ 
+ */
+
 typedef struct LinkedListNode LinkedListNode;
-typedef struct LinkedList     LinkedList;
+
+/**
+ 
+ A singly linkedlist.
+ 
+ */
+
+typedef struct LinkedList LinkedList;
 
 /**
  
@@ -303,7 +316,7 @@ int ll_isEmpty(LinkedList * list);
 
 /**
  
- Returns the list as a string.
+ Returns an ASCII representation of the LinkedList.
  
  @Warning
  Allocates Memory.
